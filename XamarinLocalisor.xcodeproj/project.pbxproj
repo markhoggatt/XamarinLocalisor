@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE1489322048407B0063DDA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1489312048407B0063DDA1 /* AppDelegate.swift */; };
+		BE1489342048407B0063DDA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1489332048407B0063DDA1 /* ViewController.swift */; };
+		BE1489362048407B0063DDA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1489352048407B0063DDA1 /* Assets.xcassets */; };
+		BE1489392048407B0063DDA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1489372048407B0063DDA1 /* Main.storyboard */; };
+		BE1489452048407B0063DDA1 /* XamarinLocalisorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1489442048407B0063DDA1 /* XamarinLocalisorTests.swift */; };
+		BE1489502048407B0063DDA1 /* XamarinLocalisorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14894F2048407B0063DDA1 /* XamarinLocalisorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE1489412048407B0063DDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE1489262048407A0063DDA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE14892D2048407B0063DDA1;
+			remoteInfo = XamarinLocalisor;
+		};
+		BE14894C2048407B0063DDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE1489262048407A0063DDA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE14892D2048407B0063DDA1;
+			remoteInfo = XamarinLocalisor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE14892E2048407B0063DDA1 /* XamarinLocalisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XamarinLocalisor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1489312048407B0063DDA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE1489332048407B0063DDA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE1489352048407B0063DDA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE1489382048407B0063DDA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE14893A2048407B0063DDA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE14893B2048407B0063DDA1 /* XamarinLocalisor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XamarinLocalisor.entitlements; sourceTree = "<group>"; };
+		BE1489402048407B0063DDA1 /* XamarinLocalisorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XamarinLocalisorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1489442048407B0063DDA1 /* XamarinLocalisorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XamarinLocalisorTests.swift; sourceTree = "<group>"; };
+		BE1489462048407B0063DDA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE14894B2048407B0063DDA1 /* XamarinLocalisorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XamarinLocalisorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE14894F2048407B0063DDA1 /* XamarinLocalisorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XamarinLocalisorUITests.swift; sourceTree = "<group>"; };
+		BE1489512048407B0063DDA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE14892B2048407B0063DDA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE14893D2048407B0063DDA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE1489482048407B0063DDA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE1489252048407A0063DDA1 = {
+			isa = PBXGroup;
+			children = (
+				BE1489302048407B0063DDA1 /* XamarinLocalisor */,
+				BE1489432048407B0063DDA1 /* XamarinLocalisorTests */,
+				BE14894E2048407B0063DDA1 /* XamarinLocalisorUITests */,
+				BE14892F2048407B0063DDA1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE14892F2048407B0063DDA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE14892E2048407B0063DDA1 /* XamarinLocalisor.app */,
+				BE1489402048407B0063DDA1 /* XamarinLocalisorTests.xctest */,
+				BE14894B2048407B0063DDA1 /* XamarinLocalisorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE1489302048407B0063DDA1 /* XamarinLocalisor */ = {
+			isa = PBXGroup;
+			children = (
+				BE1489312048407B0063DDA1 /* AppDelegate.swift */,
+				BE1489332048407B0063DDA1 /* ViewController.swift */,
+				BE1489352048407B0063DDA1 /* Assets.xcassets */,
+				BE1489372048407B0063DDA1 /* Main.storyboard */,
+				BE14893A2048407B0063DDA1 /* Info.plist */,
+				BE14893B2048407B0063DDA1 /* XamarinLocalisor.entitlements */,
+			);
+			path = XamarinLocalisor;
+			sourceTree = "<group>";
+		};
+		BE1489432048407B0063DDA1 /* XamarinLocalisorTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE1489442048407B0063DDA1 /* XamarinLocalisorTests.swift */,
+				BE1489462048407B0063DDA1 /* Info.plist */,
+			);
+			path = XamarinLocalisorTests;
+			sourceTree = "<group>";
+		};
+		BE14894E2048407B0063DDA1 /* XamarinLocalisorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE14894F2048407B0063DDA1 /* XamarinLocalisorUITests.swift */,
+				BE1489512048407B0063DDA1 /* Info.plist */,
+			);
+			path = XamarinLocalisorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE14892D2048407B0063DDA1 /* XamarinLocalisor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE1489542048407B0063DDA1 /* Build configuration list for PBXNativeTarget "XamarinLocalisor" */;
+			buildPhases = (
+				BE14892A2048407B0063DDA1 /* Sources */,
+				BE14892B2048407B0063DDA1 /* Frameworks */,
+				BE14892C2048407B0063DDA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XamarinLocalisor;
+			productName = XamarinLocalisor;
+			productReference = BE14892E2048407B0063DDA1 /* XamarinLocalisor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE14893F2048407B0063DDA1 /* XamarinLocalisorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE1489572048407B0063DDA1 /* Build configuration list for PBXNativeTarget "XamarinLocalisorTests" */;
+			buildPhases = (
+				BE14893C2048407B0063DDA1 /* Sources */,
+				BE14893D2048407B0063DDA1 /* Frameworks */,
+				BE14893E2048407B0063DDA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE1489422048407B0063DDA1 /* PBXTargetDependency */,
+			);
+			name = XamarinLocalisorTests;
+			productName = XamarinLocalisorTests;
+			productReference = BE1489402048407B0063DDA1 /* XamarinLocalisorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE14894A2048407B0063DDA1 /* XamarinLocalisorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE14895A2048407B0063DDA1 /* Build configuration list for PBXNativeTarget "XamarinLocalisorUITests" */;
+			buildPhases = (
+				BE1489472048407B0063DDA1 /* Sources */,
+				BE1489482048407B0063DDA1 /* Frameworks */,
+				BE1489492048407B0063DDA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE14894D2048407B0063DDA1 /* PBXTargetDependency */,
+			);
+			name = XamarinLocalisorUITests;
+			productName = XamarinLocalisorUITests;
+			productReference = BE14894B2048407B0063DDA1 /* XamarinLocalisorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE1489262048407A0063DDA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Mark Hoggatt";
+				TargetAttributes = {
+					BE14892D2048407B0063DDA1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					BE14893F2048407B0063DDA1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE14892D2048407B0063DDA1;
+					};
+					BE14894A2048407B0063DDA1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE14892D2048407B0063DDA1;
+					};
+				};
+			};
+			buildConfigurationList = BE1489292048407A0063DDA1 /* Build configuration list for PBXProject "XamarinLocalisor" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE1489252048407A0063DDA1;
+			productRefGroup = BE14892F2048407B0063DDA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE14892D2048407B0063DDA1 /* XamarinLocalisor */,
+				BE14893F2048407B0063DDA1 /* XamarinLocalisorTests */,
+				BE14894A2048407B0063DDA1 /* XamarinLocalisorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE14892C2048407B0063DDA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE1489362048407B0063DDA1 /* Assets.xcassets in Resources */,
+				BE1489392048407B0063DDA1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE14893E2048407B0063DDA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE1489492048407B0063DDA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE14892A2048407B0063DDA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE1489342048407B0063DDA1 /* ViewController.swift in Sources */,
+				BE1489322048407B0063DDA1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE14893C2048407B0063DDA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE1489452048407B0063DDA1 /* XamarinLocalisorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE1489472048407B0063DDA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE1489502048407B0063DDA1 /* XamarinLocalisorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE1489422048407B0063DDA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE14892D2048407B0063DDA1 /* XamarinLocalisor */;
+			targetProxy = BE1489412048407B0063DDA1 /* PBXContainerItemProxy */;
+		};
+		BE14894D2048407B0063DDA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE14892D2048407B0063DDA1 /* XamarinLocalisor */;
+			targetProxy = BE14894C2048407B0063DDA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE1489372048407B0063DDA1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE1489382048407B0063DDA1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE1489522048407B0063DDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BE1489532048407B0063DDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		BE1489552048407B0063DDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = XamarinLocalisor/XamarinLocalisor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 254B3ZM8HN;
+				INFOPLIST_FILE = XamarinLocalisor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.paxton.XamarinLocalisor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		BE1489562048407B0063DDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = XamarinLocalisor/XamarinLocalisor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 254B3ZM8HN;
+				INFOPLIST_FILE = XamarinLocalisor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.paxton.XamarinLocalisor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		BE1489582048407B0063DDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 254B3ZM8HN;
+				INFOPLIST_FILE = XamarinLocalisorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.paxton.XamarinLocalisorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XamarinLocalisor.app/Contents/MacOS/XamarinLocalisor";
+			};
+			name = Debug;
+		};
+		BE1489592048407B0063DDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 254B3ZM8HN;
+				INFOPLIST_FILE = XamarinLocalisorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.paxton.XamarinLocalisorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XamarinLocalisor.app/Contents/MacOS/XamarinLocalisor";
+			};
+			name = Release;
+		};
+		BE14895B2048407B0063DDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 254B3ZM8HN;
+				INFOPLIST_FILE = XamarinLocalisorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.paxton.XamarinLocalisorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = XamarinLocalisor;
+			};
+			name = Debug;
+		};
+		BE14895C2048407B0063DDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 254B3ZM8HN;
+				INFOPLIST_FILE = XamarinLocalisorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.paxton.XamarinLocalisorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = XamarinLocalisor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE1489292048407A0063DDA1 /* Build configuration list for PBXProject "XamarinLocalisor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE1489522048407B0063DDA1 /* Debug */,
+				BE1489532048407B0063DDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE1489542048407B0063DDA1 /* Build configuration list for PBXNativeTarget "XamarinLocalisor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE1489552048407B0063DDA1 /* Debug */,
+				BE1489562048407B0063DDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE1489572048407B0063DDA1 /* Build configuration list for PBXNativeTarget "XamarinLocalisorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE1489582048407B0063DDA1 /* Debug */,
+				BE1489592048407B0063DDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE14895A2048407B0063DDA1 /* Build configuration list for PBXNativeTarget "XamarinLocalisorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE14895B2048407B0063DDA1 /* Debug */,
+				BE14895C2048407B0063DDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE1489262048407A0063DDA1 /* Project object */;
+}
