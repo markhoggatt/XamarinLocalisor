@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		BE1489322048407B0063DDA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1489312048407B0063DDA1 /* AppDelegate.swift */; };
-		BE1489342048407B0063DDA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1489332048407B0063DDA1 /* ViewController.swift */; };
 		BE1489362048407B0063DDA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1489352048407B0063DDA1 /* Assets.xcassets */; };
 		BE1489392048407B0063DDA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1489372048407B0063DDA1 /* Main.storyboard */; };
 		BE1489452048407B0063DDA1 /* XamarinLocalisorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1489442048407B0063DDA1 /* XamarinLocalisorTests.swift */; };
 		BE1489502048407B0063DDA1 /* XamarinLocalisorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14894F2048407B0063DDA1 /* XamarinLocalisorUITests.swift */; };
+		BE14895E2048420F0063DDA1 /* TranslationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14895D2048420F0063DDA1 /* TranslationsViewController.swift */; };
+		BE14896020484EDF0063DDA1 /* ResourceScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14895F20484EDF0063DDA1 /* ResourceScanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,6 @@
 /* Begin PBXFileReference section */
 		BE14892E2048407B0063DDA1 /* XamarinLocalisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XamarinLocalisor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1489312048407B0063DDA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE1489332048407B0063DDA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE1489352048407B0063DDA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE1489382048407B0063DDA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE14893A2048407B0063DDA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +46,8 @@
 		BE14894B2048407B0063DDA1 /* XamarinLocalisorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XamarinLocalisorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE14894F2048407B0063DDA1 /* XamarinLocalisorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XamarinLocalisorUITests.swift; sourceTree = "<group>"; };
 		BE1489512048407B0063DDA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE14895D2048420F0063DDA1 /* TranslationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationsViewController.swift; sourceTree = "<group>"; };
+		BE14895F20484EDF0063DDA1 /* ResourceScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceScanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +99,12 @@
 			isa = PBXGroup;
 			children = (
 				BE1489312048407B0063DDA1 /* AppDelegate.swift */,
-				BE1489332048407B0063DDA1 /* ViewController.swift */,
 				BE1489352048407B0063DDA1 /* Assets.xcassets */,
 				BE1489372048407B0063DDA1 /* Main.storyboard */,
 				BE14893A2048407B0063DDA1 /* Info.plist */,
 				BE14893B2048407B0063DDA1 /* XamarinLocalisor.entitlements */,
+				BE14895D2048420F0063DDA1 /* TranslationsViewController.swift */,
+				BE14895F20484EDF0063DDA1 /* ResourceScanner.swift */,
 			);
 			path = XamarinLocalisor;
 			sourceTree = "<group>";
@@ -257,8 +260,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1489342048407B0063DDA1 /* ViewController.swift in Sources */,
 				BE1489322048407B0063DDA1 /* AppDelegate.swift in Sources */,
+				BE14896020484EDF0063DDA1 /* ResourceScanner.swift in Sources */,
+				BE14895E2048420F0063DDA1 /* TranslationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
