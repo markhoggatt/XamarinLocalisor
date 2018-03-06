@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TranslationsViewController: NSViewController
+class TranslationsViewController: NSViewController, NSMenuDelegate
 {
 	var fileUrl : URL?
 	

@@ -17,8 +17,36 @@ class ResourceScanner
 	
 	}
 	
-	func FindSolutionFile(filePath : URL) -> URL
+	func FindSolutionFile(filePath : URL) -> URL?
 	{
-		return URL(fileReferenceLiteralResourceName: "")
+		let fMgr : FileManager = FileManager.default
+
+		let pathRaw : String = filePath.path
+
+		guard fMgr.fileExists(atPath: pathRaw)
+		else
+		{
+			return nil
+		}
+
+		do
+		{
+			let fileSet = try fMgr.contentsOfDirectory(atPath: pathRaw)
+			for fName in fileSet
+			{
+				let fUrl = URL(fileURLWithPath: fName)
+				if fUrl.pathExtension == "sln"
+				{
+					return fUrl
+				}
+			}
+		}
+		catch
+		{
+			NSLog("File enumderation failed: \(error.localizedDescription)")
+			return nil
+		}
+
+		return nil
 	}
 }

@@ -11,7 +11,7 @@ import XCTest
 
 class XamarinLocalisorTests: XCTestCase
 {
-	let solutionPath = "/Users/markhoggat/Projects/AdminMobileApp"
+	let solutionPath = "/Users/markho/Projects/AdminMobileApp"
 	
 	let workingScanner : ResourceScanner = ResourceScanner()
 	
@@ -29,7 +29,9 @@ class XamarinLocalisorTests: XCTestCase
     
     func testSolutionExists()
 	{
-		
+		let solutionUrl = URL(fileURLWithPath: solutionPath)
+		let foundSolution : URL? = workingScanner.FindSolutionFile(filePath: solutionUrl)
+		XCTAssertNotNil(foundSolution)
     }
     
     func testPerformanceExample()
