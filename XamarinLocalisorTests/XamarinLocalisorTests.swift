@@ -30,7 +30,7 @@ class XamarinLocalisorTests: XCTestCase
     func testSolutionExists()
 	{
 		let solutionUrl = URL(fileURLWithPath: solutionPath)
-		let foundSolution : URL? = workingScanner.FindSolutionFile(filePath: solutionUrl)
+		let foundSolution : URL? = workingScanner.FindUrlInDirectory(filePath: solutionUrl, withSuffix : "sln")
 		XCTAssertNotNil(foundSolution)
     }
     

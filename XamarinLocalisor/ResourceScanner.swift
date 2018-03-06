@@ -17,7 +17,7 @@ class ResourceScanner
 	
 	}
 	
-	func FindSolutionFile(filePath : URL) -> URL?
+	func FindUrlInDirectory(filePath : URL, withSuffix suffix : String) -> URL?
 	{
 		let fMgr : FileManager = FileManager.default
 
@@ -35,7 +35,7 @@ class ResourceScanner
 			for fName in fileSet
 			{
 				let fUrl = URL(fileURLWithPath: fName)
-				if fUrl.pathExtension == "sln"
+				if fUrl.pathExtension == suffix
 				{
 					return fUrl
 				}
@@ -44,7 +44,6 @@ class ResourceScanner
 		catch
 		{
 			NSLog("File enumderation failed: \(error.localizedDescription)")
-			return nil
 		}
 
 		return nil
