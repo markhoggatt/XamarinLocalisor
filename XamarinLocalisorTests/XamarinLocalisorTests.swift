@@ -33,6 +33,13 @@ class XamarinLocalisorTests: XCTestCase
 		let foundSolution : URL? = workingScanner.FindUrlInDirectory(filePath: solutionUrl, withSuffix : "sln")
 		XCTAssertNotNil(foundSolution)
     }
+
+	func testDirectoryContainment()
+	{
+		let solutionUrl = URL(fileURLWithPath: solutionPath)
+		let foundDirectories : [URL] = workingScanner.FindDirectoriesInDirectory(filePath: solutionUrl)
+		XCTAssertFalse(foundDirectories.isEmpty)
+	}
     
     func testPerformanceExample()
 	{
