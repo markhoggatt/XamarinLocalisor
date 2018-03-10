@@ -12,6 +12,8 @@ import XCTest
 class XamarinLocalisorTests: XCTestCase
 {
 	let solutionPath = "/Users/markho/Projects/AdminMobileApp"
+	let iosResourcePath = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect/Resources"
+	let androidResourcePath = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect.Droid/Resources"
 	
 	let workingScanner : ResourceScanner = ResourceScanner()
 	
@@ -39,6 +41,26 @@ class XamarinLocalisorTests: XCTestCase
 		let solutionUrl = URL(fileURLWithPath: solutionPath)
 		let foundDirectories : [URL] = workingScanner.FindDirectoriesInDirectory(filePath: solutionUrl)
 		XCTAssertFalse(foundDirectories.isEmpty)
+	}
+
+	func testScanSolution()
+	{
+		let solutionUrl = URL(fileURLWithPath: solutionPath)
+		workingScanner.ScanSolution(fileUrl: solutionUrl)
+	}
+
+	func testIosResourceDetection()
+	{
+		let iosResourcePlatform = URL(fileURLWithPath: iosResourcePath)
+		let resourcePlatform : ResourcePlatform = workingScanner.DiscoverResourceFolderPlatform(resourcePath: iosResourcePlatform)
+		XCTAssertEqual(ResourcePlatform.iOS, resourcePlatform)
+	}
+
+	func testAndroidResourceDetection()
+	{
+		let androidResourcePlatform = URL(fileURLWithPath: androidResourcePath)
+		let resourcePlatform : ResourcePlatform = workingScanner.DiscoverResourceFolderPlatform(resourcePath: androidResourcePlatform)
+		XCTAssertEqual(ResourcePlatform.Android, resourcePlatform)
 	}
     
     func testPerformanceExample()
