@@ -11,9 +11,11 @@ import XCTest
 
 class XamarinLocalisorTests: XCTestCase
 {
-	let solutionPath = "/Users/markho/Projects/AdminMobileApp"
-	let iosResourcePath = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect/Resources"
-	let androidResourcePath = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect.Droid/Resources"
+	let solutionPath : String = "/Users/markho/Projects/AdminMobileApp"
+	let iosResourcePath : String = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect/Resources"
+	let androidResourcePath : String = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect.Droid/Resources"
+	let iosStringResourcePath : String = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect/Resources/de.lproj"
+	let testRegion : String = "de"
 	
 	let workingScanner : ResourceScanner = ResourceScanner()
 	
@@ -61,6 +63,29 @@ class XamarinLocalisorTests: XCTestCase
 		let androidResourcePlatform = URL(fileURLWithPath: androidResourcePath)
 		let resourcePlatform : ResourcePlatform = workingScanner.DiscoverResourceFolderPlatform(resourcePath: androidResourcePlatform)
 		XCTAssertEqual(ResourcePlatform.Android, resourcePlatform)
+	}
+
+	func testiOSResourceScan()
+	{
+		let iosResPath = URL(fileURLWithPath: iosResourcePath)
+		var platfrmRsrce = PlatformResourceSet(IdentifiedPlatform: .iOS, ResourcePath: iosResPath, ResourceSet: [:])
+		let rsrceGroups : [String : ResourceGroup] = workingScanner.AnalyseiOSResources(usingPlatformset: platfrmRsrce)
+		platfrmRsrce.ResourceSet = rsrceGroups
+		XCTAssertGreaterThan(rsrceGroups.count, 0)
+	}
+
+	func testFileListWithSuffix()
+	{
+		let iosResPath = URL(fileURLWithPath: iosStringResourcePath)
+		let fileList : [URL] = workingScanner.FindFiles(filePath: iosResPath, withSuffix: "strings")
+		XCTAssertGreaterThan(fileList.count, 0)
+	}
+
+	func testiOSLanguageFileScan()
+	{
+		let iosResPath = URL(fileURLWithPath: iosResourcePath)
+		var rsrcGroup : ResourceGroup = workingScanner.ScaniOSLanguageFileSet(foundInUrl: iosResPath, regionId: testRegion)
+		XCTAssertGreaterThan(rsrcGroup.LocalisationRegions.count, 0)
 	}
     
     func testPerformanceExample()

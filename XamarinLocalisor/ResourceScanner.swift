@@ -18,6 +18,7 @@ enum ScanProgress
 	case ResourcesFound
 	case AndroidResources
 	case iOSResources
+	case UnsupportedResources
 	case ExtractedAndroidSources
 	case ExtractediOSSources
 }
@@ -82,14 +83,30 @@ class ResourceScanner
 
 			resourcePaths.append(rsrcPath)
 		}
-		if resourcePaths.count <= 0
+
+		// We only want to process resources if there are any.
+		guard resourcePaths.count > 0
+		else
 		{
 			progressSet.append(.NoResourcesFound)
 			return
 		}
 
 		// 4. Foreach directory called Resources - If starts with values, then Android. If ends with lproj, then iOS.
+		var platformRes : [PlatformResourceSet] = []
 		progressSet.append(.ResourcesFound)
+		for rPath : URL in resourcePaths
+		{
+			let rsrceType : ResourcePlatform = DiscoverResourceFolderPlatform(resourcePath: rPath)
+			guard rsrceType != .Unsupported
+			else
+			{
+				continue
+			}
+
+			let foundRsrc = PlatformResourceSet(IdentifiedPlatform: rsrceType, ResourcePath: rPath, ResourceSet: [:])
+			platformRes.append(foundRsrc)
+		}
 
 		// 5. Extract Platform, Language, Key, Text, Comment
 	}
@@ -132,6 +149,48 @@ class ResourceScanner
 		}
 
 		return nil
+	}
+
+	/// Returns the list of files with the matching suffix.
+	///
+	/// - Parameters:
+	///   - filePath: The path to search for the suffix.
+	///   - suffix: The suffix to search.
+	/// - Returns: The URL of the file or nil if the file suffix was not found.
+	func FindFiles(filePath : URL, withSuffix suffix : String) -> [URL]
+	{
+		let fMgr : FileManager = FileManager.default
+
+		let pathRaw : String = filePath.path
+
+		guard fMgr.fileExists(atPath: pathRaw)
+			else
+		{
+			return []
+		}
+
+		var fileList : [URL] = []
+		do
+		{
+			let fileSet : [String] = try fMgr.contentsOfDirectory(atPath: pathRaw)
+			for fName in fileSet
+			{
+				let fPath = pathRaw + "/" + fName
+				let fUrl = URL(fileURLWithPath: fPath)
+				if fUrl.pathExtension == suffix
+				{
+					fileList.append(fUrl)
+				}
+			}
+
+			return fileList
+		}
+		catch
+		{
+			NSLog("File enumderation failed: \(error.localizedDescription)")
+		}
+
+		return []
 	}
 
 
@@ -245,6 +304,109 @@ class ResourceScanner
 			}
 		}
 
+		var progessResult : ScanProgress = .UnsupportedResources
+		switch workingType
+		{
+		case .Android:
+			progessResult = .AndroidResources
+		case .iOS:
+			progessResult = .iOSResources
+		default:
+			NSLog("Ambiguous or unexpected resource discovery scan")
+		}
+
+		progressSet.append(progessResult)
+
 		return workingType
+	}
+
+	func AnalyseiOSResources(usingPlatformset rsrcSet: PlatformResourceSet) -> [String : ResourceGroup]
+	{
+		guard rsrcSet.IdentifiedPlatform == .iOS
+		else
+		{
+			NSLog("Incorrect analysis call - Expecting iOS, found \(rsrcSet.IdentifiedPlatform)")
+			return [:]
+		}
+
+		let regionSet : [URL] = FindDirectoriesInDirectory(filePath: rsrcSet.ResourcePath)
+		var rsrcGroup : [String : ResourceGroup] = [:]
+		for regionDir : URL in regionSet
+		{
+			let regionResource : String = regionDir.lastPathComponent
+			let regionTag : String = String(regionResource.prefix(while:
+			{ (c : Character) -> Bool in
+				return c != "."
+			}))
+
+			guard regionTag.count > 0
+			else
+			{
+				continue
+			}
+
+			let rGroup = ScaniOSLanguageFileSet(foundInUrl: rsrcSet.ResourcePath, regionId: regionTag)
+			if rsrcSet.ResourceSet.contains(where:
+				{ (key : String, value : ResourceGroup) -> Bool in
+					return key == regionTag
+				})
+			{
+				NSLog("Possible duplication of region: \(regionTag)")
+				continue
+			}
+
+			rsrcGroup[regionTag] = rGroup
+		}
+
+		return rsrcGroup
+	}
+
+	func ScaniOSLanguageFileSet(foundInUrl rsrceUrl : URL, regionId : String) -> ResourceGroup
+	{
+		var regionGroup = ResourceGroup(RegionId: regionId, LocalisationRegions: [:])
+		let regionSuffix : String = regionId + ".lproj"
+		var regionPath : URL = rsrceUrl
+		regionPath.appendPathComponent(regionSuffix)
+		let langFiles : [URL] = FindFiles(filePath: regionPath, withSuffix: "strings")
+		guard langFiles.count > 0
+		else
+		{
+			return regionGroup
+		}
+
+		var langEntries : [LangResource] = []
+		for langFile : URL in langFiles
+		{
+			let entrySet : [LangResource] = ParseiOSLangFile(inLangFile: langFile)
+			guard entrySet.count > 0
+			else
+			{
+				continue
+			}
+
+			langEntries.append(contentsOf: entrySet)
+		}
+
+		regionGroup.LocalisationRegions[regionId] = langEntries
+
+		return regionGroup
+	}
+
+	func ParseiOSLangFile(inLangFile langFile : URL) -> [LangResource]
+	{
+		var langSet : [LangResource] = []
+
+		let fMgr : FileManager = FileManager.default
+
+		do
+		{
+			let langResource = try String(contentsOf: langFile, encoding: String.Encoding.utf8)
+		}
+		catch
+		{
+			NSLog("Failed to read resource file at \(langFile): \(error)")
+		}
+
+		return langSet
 	}
 }

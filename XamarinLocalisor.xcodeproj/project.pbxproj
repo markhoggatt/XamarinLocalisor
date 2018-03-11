@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2173278A205520DA0044B172 /* PlatformResouceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21732789205520DA0044B172 /* PlatformResouceSet.swift */; };
 		21D10EE2205428CA00588AF9 /* ResourceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D10EE1205428CA00588AF9 /* ResourceGroup.swift */; };
 		21D10EE4205429A900588AF9 /* LangResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D10EE3205429A900588AF9 /* LangResource.swift */; };
 		BE1489322048407B0063DDA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1489312048407B0063DDA1 /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21732789205520DA0044B172 /* PlatformResouceSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformResouceSet.swift; sourceTree = "<group>"; };
 		21D10EE1205428CA00588AF9 /* ResourceGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceGroup.swift; sourceTree = "<group>"; };
 		21D10EE3205429A900588AF9 /* LangResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangResource.swift; sourceTree = "<group>"; };
 		BE14892E2048407B0063DDA1 /* XamarinLocalisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XamarinLocalisor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 			children = (
 				21D10EE1205428CA00588AF9 /* ResourceGroup.swift */,
 				21D10EE3205429A900588AF9 /* LangResource.swift */,
+				21732789205520DA0044B172 /* PlatformResouceSet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2173278A205520DA0044B172 /* PlatformResouceSet.swift in Sources */,
 				BE1489322048407B0063DDA1 /* AppDelegate.swift in Sources */,
 				21D10EE4205429A900588AF9 /* LangResource.swift in Sources */,
 				BE14896020484EDF0063DDA1 /* ResourceScanner.swift in Sources */,

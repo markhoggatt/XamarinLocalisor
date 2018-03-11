@@ -22,15 +22,9 @@ enum ResourcePlatform
 /// A group that contains a set of resources for a given platform and set of regions.
 struct ResourceGroup
 {
-	/// The plat that contains the resurce.
-	var Classification : ResourcePlatform
-
 	/// The region identifier culled from the file name.
 	var RegionId : String
 
-	/// Dictionary of resource entry dictionaries. Key=region, Value = Array of Lang resources.
+	/// Dictionary of resource entry dictionaries. Key=Entry Key, Value = Array of Lang resources.
 	var LocalisationRegions : [String : [LangResource]]
-
-	/// Path to locate the resource group
-	var OriginatingPath : URL
 }
