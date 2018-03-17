@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210A4A42205D6A7F0038393D /* LocalisableStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210A4A41205D6A7F0038393D /* LocalisableStringParser.swift */; };
 		2173278A205520DA0044B172 /* PlatformResouceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21732789205520DA0044B172 /* PlatformResouceSet.swift */; };
 		21D10EE2205428CA00588AF9 /* ResourceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D10EE1205428CA00588AF9 /* ResourceGroup.swift */; };
 		21D10EE4205429A900588AF9 /* LangResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D10EE3205429A900588AF9 /* LangResource.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210A4A41205D6A7F0038393D /* LocalisableStringParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisableStringParser.swift; sourceTree = "<group>"; };
 		21732789205520DA0044B172 /* PlatformResouceSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformResouceSet.swift; sourceTree = "<group>"; };
 		21D10EE1205428CA00588AF9 /* ResourceGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceGroup.swift; sourceTree = "<group>"; };
 		21D10EE3205429A900588AF9 /* LangResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangResource.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				BE14893B2048407B0063DDA1 /* XamarinLocalisor.entitlements */,
 				BE14895D2048420F0063DDA1 /* TranslationsViewController.swift */,
 				BE14895F20484EDF0063DDA1 /* ResourceScanner.swift */,
+				210A4A41205D6A7F0038393D /* LocalisableStringParser.swift */,
 			);
 			path = XamarinLocalisor;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				2173278A205520DA0044B172 /* PlatformResouceSet.swift in Sources */,
 				BE1489322048407B0063DDA1 /* AppDelegate.swift in Sources */,
+				210A4A42205D6A7F0038393D /* LocalisableStringParser.swift in Sources */,
 				21D10EE4205429A900588AF9 /* LangResource.swift in Sources */,
 				BE14896020484EDF0063DDA1 /* ResourceScanner.swift in Sources */,
 				BE14895E2048420F0063DDA1 /* TranslationsViewController.swift in Sources */,
