@@ -60,11 +60,22 @@ class LocalisableStringParser
 
 	fileprivate func trimComment(sample : String) -> String
 	{
+		var blockComment : Bool = false
+		var lineComment : Bool = false
+
 		let trimmed : Substring = sample.drop
 		{(c : Character) -> Bool in
 			switch(c)
 			{
 			case "/", " ":
+				lineComment = true
+				return true
+
+			case "*":
+				if lineComment
+				{
+					blockComment = true
+				}
 				return true
 
 			default:
@@ -72,7 +83,22 @@ class LocalisableStringParser
 			}
 		}
 
-		return String(trimmed)
+		if blockComment == false
+		{
+			return String(trimmed)
+		}
+
+		var truncated : Substring = trimmed.prefix
+		{(c : Character) -> Bool in
+			return c != "/"
+		}
+
+		if truncated.hasSuffix("*")
+		{
+			return String(truncated.removeLast())
+		}
+
+		return String(truncated)
 	}
 
 	fileprivate func trimQuotes(sample : Substring) -> String
