@@ -19,7 +19,7 @@ class LocalisableStringParser
 		for resLine : Substring in lineSet
 		{
 			let linePart = String(trimStart(sample: resLine))
-			if linePart.hasPrefix("//")
+			if linePart.hasPrefix("//") || linePart.hasPrefix("/*")
 			{
 				nextRes = LangResource(EntryIdentifier: "", TextEntry: "", EntryComment: trimComment(sample: linePart), TranslationDone: false, ShouldTranslate: true)
 			}
@@ -93,9 +93,9 @@ class LocalisableStringParser
 			return c != "/"
 		}
 
-		if truncated.hasSuffix("*")
+		if truncated.hasSuffix(" *")
 		{
-			return String(truncated.removeLast())
+			truncated.removeLast(2)
 		}
 
 		return String(truncated)

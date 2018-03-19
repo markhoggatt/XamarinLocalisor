@@ -16,6 +16,7 @@ class XamarinLocalisorTests: XCTestCase
 	let androidResourcePath : String = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect.Droid/Resources"
 	let iosStringResourcePath : String = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect/Resources/de.lproj"
 	let iosStringLocalisable : String = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect/Resources/de.lproj/Localizable.strings"
+	let iosMainStringLocalisable : String = "/Users/markho/Projects/AdminMobileApp/PaxtonConnect/Resources/de.lproj/Main.strings"
 	let testRegion : String = "de"
 	
 	let workingScanner : ResourceScanner = ResourceScanner()
@@ -89,16 +90,26 @@ class XamarinLocalisorTests: XCTestCase
 		XCTAssertGreaterThan(rsrcGroup.LocalisationRegions.count, 0)
 	}
 
-	func testiOSResourseParse()
-	{
-		let iosResPath = URL(fileURLWithPath: iosStringLocalisable)
-		let resources = workingScanner.ParseiOSLangFile(inLangFile: iosResPath)
-		XCTAssertNotNil(resources)
-	}
-
 	func testLocalisedStringParse()
 	{
 		let iosResPath = URL(fileURLWithPath: iosStringLocalisable)
+		do
+		{
+			let langResource = try String(contentsOf: iosResPath, encoding: String.Encoding.utf8)
+			let parser = LocalisableStringParser()
+			let langSet : [LangResource] = parser.decode(localisableStrings: langResource)
+			XCTAssertGreaterThan(langSet.count, 0)
+		}
+		catch
+		{
+			NSLog("Failed to read resource file at \(iosResPath): \(error)")
+			XCTFail()
+		}
+	}
+
+	func testLocalisedMainStringParse()
+	{
+		let iosResPath = URL(fileURLWithPath: iosMainStringLocalisable)
 		do
 		{
 			let langResource = try String(contentsOf: iosResPath, encoding: String.Encoding.utf8)

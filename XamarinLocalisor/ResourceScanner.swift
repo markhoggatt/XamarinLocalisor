@@ -374,39 +374,30 @@ class ResourceScanner
 			return regionGroup
 		}
 
+		let parser = LocalisableStringParser()
 		var langEntries : [LangResource] = []
 		for langFile : URL in langFiles
 		{
-			let entrySet : [LangResource] = ParseiOSLangFile(inLangFile: langFile)
-			guard entrySet.count > 0
-			else
+			do
 			{
-				continue
-			}
+				let langRsrce = try String(contentsOf: langFile, encoding: String.Encoding.utf8)
+				let entrySet : [LangResource] = parser.decode(localisableStrings: langRsrce)
+				guard entrySet.count > 0
+				else
+				{
+					continue
+				}
 
-			langEntries.append(contentsOf: entrySet)
+				langEntries.append(contentsOf: entrySet)
+			}
+			catch
+			{
+				NSLog("Failed to read resource file at \(langFile): \(error)")
+			}
 		}
 
 		regionGroup.LocalisationRegions[regionId] = langEntries
 
 		return regionGroup
-	}
-
-	func ParseiOSLangFile(inLangFile langFile : URL) -> [LangResource]
-	{
-		var langSet : [LangResource] = []
-
-		let fMgr : FileManager = FileManager.default
-
-		do
-		{
-			let langResource = try String(contentsOf: langFile, encoding: String.Encoding.utf8)
-		}
-		catch
-		{
-			NSLog("Failed to read resource file at \(langFile): \(error)")
-		}
-
-		return langSet
 	}
 }
