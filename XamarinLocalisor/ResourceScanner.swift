@@ -29,6 +29,8 @@ class ResourceScanner
 	let projectPattern : String = "csproj"
 	let packageExclusion : String = "package"
 	let resourceFolder : String = "Resources"
+	let androidRsrcPrefix : String = "values-"
+	let androidStringsFile : String = "Strings.xml"
 
 	var progressSet : [ScanProgress] = [ScanProgress]()
 	
@@ -109,6 +111,22 @@ class ResourceScanner
 		}
 
 		// 5. Extract Platform, Language, Key, Text, Comment
+		for var pltf : PlatformResourceSet in platformRes
+		{
+			switch pltf.IdentifiedPlatform
+			{
+			case .Android:
+				let droidResources : [String : ResourceGroup] = AnalyseAndroidResources(usingPlatformset: pltf)
+				pltf.ResourceSet = droidResources
+
+			case .iOS:
+				let iosResources : [String : ResourceGroup] = AnalyseiOSResources(usingPlatformset: pltf)
+				pltf.ResourceSet = iosResources
+
+			default:
+				NSLog("Unsupported resource set")
+			}
+		}
 	}
 
 
@@ -384,6 +402,87 @@ class ResourceScanner
 				let entrySet : [LangResource] = parser.decode(localisableStrings: langRsrce)
 				guard entrySet.count > 0
 				else
+				{
+					continue
+				}
+
+				langEntries.append(contentsOf: entrySet)
+			}
+			catch
+			{
+				NSLog("Failed to read resource file at \(langFile): \(error)")
+			}
+		}
+
+		regionGroup.LocalisationRegions[regionId] = langEntries
+
+		return regionGroup
+	}
+
+	func AnalyseAndroidResources(usingPlatformset rsrcSet: PlatformResourceSet) -> [String : ResourceGroup]
+	{
+		guard rsrcSet.IdentifiedPlatform == .Android
+			else
+		{
+			NSLog("Incorrect analysis call - Expecting Android, found \(rsrcSet.IdentifiedPlatform)")
+			return [:]
+		}
+
+		let regionSet : [URL] = FindDirectoriesInDirectory(filePath: rsrcSet.ResourcePath)
+		var rsrcGroup : [String : ResourceGroup] = [:]
+		let prefixLen : Int = androidRsrcPrefix.count
+		for regionDir : URL in regionSet
+		{
+			let regionResource : String = regionDir.lastPathComponent
+			guard regionResource.hasPrefix(androidRsrcPrefix)
+				else
+			{
+				continue
+			}
+
+			let regionTag = String(regionResource.dropFirst(prefixLen))
+			guard regionTag.count > 0
+				else
+			{
+				continue
+			}
+
+			let rGroup = ScanAndroidLanguageFileSet(foundInUrl: regionDir, regionId: regionTag)
+			if rsrcSet.ResourceSet.contains(where:
+				{ (key : String, value : ResourceGroup) -> Bool in
+					return key == regionTag
+			})
+			{
+				NSLog("Possible duplication of region: \(regionTag)")
+				continue
+			}
+
+			rsrcGroup[regionTag] = rGroup
+		}
+
+		return rsrcGroup
+	}
+
+	func ScanAndroidLanguageFileSet(foundInUrl rsrceUrl : URL, regionId : String) -> ResourceGroup
+	{
+		var regionGroup = ResourceGroup(RegionId: regionId, LocalisationRegions: [:])
+		let langFiles : [URL] = FindFiles(filePath: rsrceUrl, withSuffix: "xml")
+		guard langFiles.count > 0
+			else
+		{
+			return regionGroup
+		}
+
+		let parser = LocalisableStringParser()
+		var langEntries : [LangResource] = []
+		for langFile : URL in langFiles
+		{
+			do
+			{
+				let langRsrce = try String(contentsOf: langFile, encoding: String.Encoding.utf8)
+				let entrySet : [LangResource] = parser.decode(localisableStrings: langRsrce)
+				guard entrySet.count > 0
+					else
 				{
 					continue
 				}
